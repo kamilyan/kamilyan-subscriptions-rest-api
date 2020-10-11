@@ -7,8 +7,9 @@ seeder.connect(db.URI, { useNewUrlParser: true, useUnifiedTopology: true }, asyn
     seeder.loadModels([
         __dirname + "/../models/odm/subscriptionsDB/movies",
         __dirname + "/../models/odm/subscriptionsDB/members",
+        __dirname + "/../models/odm/subscriptionsDB/subscriptions",
     ]);
-    seeder.clearModels(['movies', 'members'], async function () {
+    seeder.clearModels(['movies', 'members', 'subscriptions'], async function () {
         let populateMovie = await getMoviesData();
         let populateMembers = await getMembersData();
         seeder.populateModels([populateMovie, populateMembers], async function () {
