@@ -1,14 +1,15 @@
-let mongoose = require('mongoose');
+let mongoose = require("mongoose");
 
-// create a model class 
-let memberSchema = mongoose.Schema({
+// create a model class
+let memberSchema = mongoose.Schema(
+  {
     name: String,
     email: String,
-    city: String
+    city: String,
+  },
+  {
+    collection: "members",
+  }
+);
 
-},
-    {
-        collection: 'members'
-    });
-
-module.exports = mongoose.model('members', memberSchema);
+module.exports = mongoose.model("members", memberSchema);
